@@ -99,7 +99,7 @@ class UserModel extends BaseModel
 			$this->add($this->userTable, [
 				'fields' => [
 					'name' => 'admin',
-					'login' => 'admin-gbz',
+					'login' => 'admin-gruz',
 					'password' => md5(123)
 				]
 			]);

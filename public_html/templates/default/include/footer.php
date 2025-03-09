@@ -1,8 +1,8 @@
 <footer class="footer">
 	<div class="container">
 		<div class="footer-row">
-			<div class="footer-logo"><a href="#">
-					<img src="<?= PATH . TEMPLATE ?>assets/img/logo2.jpg" alt="Loft House">
+			<div class="footer-logo"><a href="<?= $this->alias() ?>">
+					<img src="<?= $this->img($this->set['img']) ?>" alt="Loft House">
 				</a></div>
 			<div class="footer__nav">
 				<nav>
@@ -10,9 +10,6 @@
 						<li><a href="#about">О нас</a></li>
 						<li><a href="#price">Стоимость услуг</a></li>
 						<li><a href="#services">Услуги</a></li>
-						<li>
-							<p>Контакты</p>
-						</li>
 					</ul>
 				</nav>
 			</div>
@@ -29,21 +26,39 @@
 			<div class="footer-address" id="contacts">
 				<ul class="footer__nav-list" style="font-size: 16px;">
 					<!-- <li>Адрес: Наб. реки Фонтанки 10-15</li> -->
-					<li>Телефон: <a href="tel:+78121234567">+7(949) 593-98-34</a> - Руслан </li>
-					<li>Телефон: <a href="tel:+78121234567">+7(949)355-26-51</a> - Николай</li>
-					<li>График работы: 8:00 - 21:00</li>
-					<li>E-mail: <a href="mailto:@lofthouse.ru" class="link-bold">грузцентр@mail.ru</a></li>
+
+					<?php if (!empty($this->phones)) : ?>
+
+						<?php foreach ($this->phones as $phone) : ?>
+
+							<li>Телефон: <a href="tel:<?= preg_replace('/[^\+\d]/', '', $phone['phone']) ?>"><?= $phone['phone'] ?></a> - <?= $phone['name'] ?> </li>
+
+						<?php endforeach; ?>
+
+					<?php endif; ?>
+
+					<li><?= $this->set['working_time'] ?></li>
+					<li>E-mail: <a href="mailto:<?= $this->set['email'] ?>" class="link-bold"><?= $this->set['email'] ?></a></li>
 				</ul>
-				<ul class="footer__socials">
-					<li><a href="!#"><img src="./../img/socials/vk.svg" alt=""></a></li>
-					<li><a href="!#"><img src="./../img/socials/youtube.svg" alt=""></a></li>
-					<li><a href="!#"><img src="./../img/socials/facebook.svg" alt=""></a></li>
-					<li><a href="!#"><img src="./../img/socials/instagram.svg" alt=""></a></li>
-				</ul>
+
+				<?php if (!empty($this->socials)) : ?>
+
+					<ul class="footer__socials">
+
+						<?php foreach ($this->socials as $item) : ?>
+
+							<li><a href="<?= $this->alias($item['external_alias']) ?>"><img src="<?= $this->img($item['img']) ?>" alt="<?= $item['name'] ?>"></a></li>
+
+						<?php endforeach; ?>
+
+					</ul>
+
+				<?php endif; ?>
+
 			</div>
 		</div>
 	</div>
-	<div class="footer__copyright">
+	<div class="footer__copyright" style="margin-top: 25px;">
 		<div class="container">
 			<p class="footer__copyright-text">Обращаем Ваше внимание на то, что данный интернет-сайт носит
 				исключительно информационный характер и ни при каких условиях информационные материалы

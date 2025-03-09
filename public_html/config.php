@@ -2,10 +2,10 @@
 
 defined('VG_ACCESS') or die('Access denied');
 
-const SITE_URL = 'http://cms-remont-gbz';
+const SITE_URL = 'http://cms-gruz';
 const PATH = '/';
 
 const HOST = 'localhost';
 const USER = 'root';
 const PASS = '';
-const DB_NAME = 'cms-remont-gbz';
+const DB_NAME = 'cms-gruz';

@@ -90,7 +90,7 @@ legend {
 
 body {
   font-family: "Raleway", sans-serif;
-  background-color: #242B33;
+  background-color: #343e49;
   color: #fff;
   font-size: 16px;
 }
@@ -380,8 +380,8 @@ a:hover {
 }
 @media screen and (max-width: 959px) {
   .benefits-item-icon {
-    width: 60px;
-    height: 60px;
+   /*  width: 60px;
+    height: 60px; */
     margin-bottom: 20px;
   }
 }
@@ -491,22 +491,24 @@ a:hover {
   z-index: 8;
   left: 50px;
   right: 20px;
-  bottom: 44px;
+  bottom: 7px;
   font-size: 24px;
+  font-weight: 900; 
+  background-color: #d5c280c4;
 }
 @media screen and (max-width: 959px) {
   .card-title {
     font-size: 20px;
     left: 30px;
-    bottom: 30px;
+    bottom: 3px;
   }
 }
 
-.cta {
-  /* background: -webkit-gradient(linear, left top, left bottom, color-stop(10.42%, #242B33), color-stop(50.52%, rgba(36, 43, 51, 0)), color-stop(90.1%, #242B33)), -webkit-gradient(linear, left bottom, left top, from(rgba(36, 43, 51, 0.9)), to(rgba(36, 43, 51, 0.9))), url(./../img/main/city.jpg), #C4C4C4; */
+/* .cta {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10.42%, #242B33), color-stop(50.52%, rgba(36, 43, 51, 0)), color-stop(90.1%, #242B33)), -webkit-gradient(linear, left bottom, left top, from(rgba(36, 43, 51, 0.9)), to(rgba(36, 43, 51, 0.9))), url(./../img/main/city.jpg), #C4C4C4;
   background: linear-gradient(90deg, #242B33 0%, rgba(36, 43, 51, 0) 100%, #242B33 90.1%), linear-gradient(0deg, rgba(36, 43, 51, 0.9), rgba(36, 43, 51, 0.9)), url(./../img/main/грузцентр.jpg) center center/cover no-repeat, #C4C4C4;
   padding: 70px 0;
-}
+} */
 @media screen and (max-width: 959px) {
   .cta {
     padding: 60px 0;
@@ -749,13 +751,13 @@ a:hover {
 
 .footer {
   background-color: #2D343C;
-  padding: 72px 0 51px 0;
+  padding: 72px 0 3px 0;
   font-size: 14px;
   letter-spacing: 0.05rem;
 }
 @media screen and (max-width: 959px) {
   .footer {
-    padding: 36px 0 25px 0;
+    padding: 36px 0 3px 0;
   }
 }
 

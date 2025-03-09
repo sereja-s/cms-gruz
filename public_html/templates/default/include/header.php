@@ -13,12 +13,12 @@
 </head>
 
 <body>
-	<header class="header" style="background: linear-gradient(180deg, #242B33 11.98%, rgba(45, 52, 60, 0.38) 51.04%, #242B33 130%), url(<?= PATH . TEMPLATE ?>assets/img/header/машины-груз.jpg) center center/cover no-repeat;">
+	<header class="header" style="background: linear-gradient(180deg, #343e49 0%, rgba(45, 52, 60, 0.38) 51.04%, #343e49 200%), url(<?= $this->img($this->set['main_img']) ?>) center center/cover no-repeat;">
 		<div class="header-top">
 			<div class="container">
 				<div class="header-top-row">
-					<a href="#">
-						<img src="<?= PATH . TEMPLATE ?>assets/img/logo2.jpg" alt="Loft House">
+					<a href="<?= $this->alias() ?>">
+						<img src="<?= $this->img($this->set['img']) ?>" alt="Груз центр">
 					</a>
 					<div class="header-top-nav">
 						<nav class="nav">
@@ -40,17 +40,13 @@
 			</div>
 		</div>
 		<div class="container">
-			<h1 class="header-title">Услуги грузчиков. Переезды. Вывоз мусора.
-				<!-- <a href="#benefits">
-                <img class="header-title-icon" src="./img/header/mouse.svg" alt="Scroll next">
-            </a> -->
-			</h1>
+			<h1 class="header-title"><?= $this->set['short_content'] ?></h1>
 		</div>
 		<div class="header-footer">
 			<div class="text-right">
-				<a href="tel:+78121234567" class="header-footer-info header-footer-info--tel" style="font-size: 18px;">+7(949) 593-98-34</a>
+				<a href="tel:<?= preg_replace('/[^+\d]/', '', $this->set['phone']) ?>" class="header-footer-info header-footer-info--tel" style="font-size: 24px;"><?= $this->set['phone'] ?></a>
 			</div>
-			<a href="tel:+78121234567" class="header-footer-info header-footer-info--tel" style="font-size: 18px;">+7(949) 355-26-51</a>
+			<a href="tel:<?= preg_replace('/[^+\d]/', '', $this->set['phone_two']) ?>" class="header-footer-info header-footer-info--tel" style="font-size: 24px;"><?= $this->set['phone_two'] ?></a>
 		</div>
 	</header>
 	<main>

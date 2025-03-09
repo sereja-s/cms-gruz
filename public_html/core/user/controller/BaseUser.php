@@ -26,7 +26,7 @@ abstract class BaseUser extends \core\base\controller\BaseController
 	/** 
 	 * свойство с данными для меню (каталог)
 	 */
-	protected $menu;
+	//protected $menu;
 
 	/** 
 	 * свойство для корзины (Выпуск №140)
@@ -50,12 +50,12 @@ abstract class BaseUser extends \core\base\controller\BaseController
 
 	protected $phones;
 
-	protected $emails;
+	//protected $emails;
 
-	protected $address;
+	//protected $address;
 
-	protected $priceTable;
-	protected $pricetable;
+	//protected $priceTable;
+	//protected $pricetable;
 
 
 	protected function inputData()
@@ -91,14 +91,14 @@ abstract class BaseUser extends \core\base\controller\BaseController
 
 
 		// получим в св-во: $this->menu, в ячейку: ['information'], то что хранится в соответствующей таблице БД
-		$this->menu['information'] = $this->model->get('information', [
+		/* $this->menu['information'] = $this->model->get('information', [
 			'where' => ['visible' => 1, 'show_top_menu' => 1],
 			'order' => ['menu_position']
-		]);
-		$this->menu['information-bottom'] = $this->model->get('information', [
+		]); */
+		/* $this->menu['information-bottom'] = $this->model->get('information', [
 			'where' => ['visible' => 1],
 			'order' => ['menu_position']
-		]);
+		]); */
 
 		// получим в св-во: $this->socials, то что хранится в соответствующей таблице БД
 		$this->socials = $this->model->get('socials', [
@@ -110,18 +110,18 @@ abstract class BaseUser extends \core\base\controller\BaseController
 			'where' => ['visible' => 1],
 			'order' => ['menu_position']
 		]);
-		$this->emails = $this->model->get('emails', [
+		/* $this->emails = $this->model->get('emails', [
 			'where' => ['visible' => 1],
 			'order' => ['menu_position']
-		]);
-		$this->address = $this->model->get('address', [
+		]); */
+		/* $this->address = $this->model->get('address', [
 			'where' => ['visible' => 1],
 			'order' => ['menu_position']
-		]);
-		$this->priceTable = $this->model->get('price_table', [
+		]); */
+		/* $this->priceTable = $this->model->get('price_table', [
 			'where' => ['visible' => 1],
 			'order' => ['menu_position'],
-		]);
+		]); */
 	}
 
 	protected function outputData()
@@ -134,7 +134,7 @@ abstract class BaseUser extends \core\base\controller\BaseController
 
 		// +Выпуск №129 (добавили в шаблон путь к файлу с хлебными крошками)
 		$this->breadcrumbs = $this->render(TEMPLATE . 'include/breadcrumbs');
-		$this->pricetable = $this->render(TEMPLATE . 'include/pricetable');
+		//$this->pricetable = $this->render(TEMPLATE . 'include/pricetable');
 
 		if (!$this->content) {
 

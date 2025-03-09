@@ -72,30 +72,19 @@ class Settings
 	private $messages = 'core/base/messages/';
 
 	// свойство с таблицей по умолчанию
-	private $defaultTable = 'sales';
+	private $defaultTable = 'settings';
 
 	// свойство в котором хранится путь к шаблонам админки
 	private $formTemplates = PATH . 'core/admin/view/include/form_templates/';
 
 	// свойство с таблицами, названия которых будут показаны в боковом меню админки
 	private $projectTables = [
-		'sales' => ['name' => 'Акции'],
-		'price_table' => ['name' => 'Стоимость услуг'],
-		/* 'catalog' => ['name' => 'Каталог (меню)'], */
-		//'filters' => ['name' => 'Фильтры'],
-		'goods' => ['name' => 'Процессы'],
-		'results_foto' => ['name' => 'Фотографии работ'],
-		'phones' => ['name' => 'Телефоны'],
-		'emails' => ['name' => 'Эл. почты'],
-		'address' => ['name' => 'Адреса'],
-		//'news' => ['name' => 'Новости'],
-		'information' => ['name' => 'Информация (меню)'],
 		'settings' => ['name' => 'Настройки (о сайте)'],
+		'goods' => ['name' => 'Услуги'],
+		'phones' => ['name' => 'Телефоны'],
 		'advantages' => ['name' => 'Преимущества'],
 		'socials' => ['name' => 'Соц.сети'],
-		//'payments' => ['name' => 'Оплата'],
-		//'delivery' => ['name' => 'Доставка'],
-		//'users' => ['name' => 'Пользователи'],
+
 	];
 	// свойство с таблицами в которых будет происходить поиск
 	private $searchProjectTables = [
@@ -106,8 +95,8 @@ class Settings
 	// свойство: массив шаблонов
 	private $templateArr = [
 		// массив вида: 'название шаблона' => массив с полями для которых должен быть подключен соответствующий шаблон
-		'text' => ['name', 'phone', 'email', 'title', 'alias', 'external_alias', 'sub_title', 'number_of_years', 'number', 'discount', 'price', 'price_auto', 'price_gruzauto', 'price_m_opt', 'login', 'password'],
-		'textarea' => ['content', 'keywords', 'address', 'working_time', 'description', 'short_content'],
+		'text' => ['name', 'phone', 'phone_two', 'email', 'title', 'alias', 'external_alias', 'sub_title', 'number_of_years', 'number', 'discount', 'price', 'price_auto', 'price_gruzauto', 'price_m_opt', 'login', 'password'],
+		'textarea' => ['content', 'keywords', 'address', 'working_time', 'description', 'short_content', 'about_us'],
 		'radio' => ['visible', 'show_top_menu', 'hit', 'new'/*'sale', 'hot'*/],
 		'checkboxlist' => ['filters', 'filters_test'], // указали, что хотим подключить фильтры к связанной таблице: 
 		// товары (они прописаны в массиве: в свойстве: private $manyToMany)
@@ -127,8 +116,10 @@ class Settings
 		'content' => ['Описание', '(Текстовая часть, фотографии, картинки к описанию)'],
 		'description' => ['SEO описание'],
 		'phone' => ['Телефон'],
+		'phone_two' => ['Телефон-2'],
 		'email' => ['Электронная почта'],
 		'address' => ['Адрес'],
+		'about_us' => ['О нас'],
 		'working_time' => ['График работы'],
 		'alias' => ['Ссылка ЧПУ'],
 		'external_alias' => ['Внешняя ссылка'],

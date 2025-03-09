@@ -1,112 +1,85 @@
-<section class="benefits">
-	<h2 class="visually-hidden">Наши преимущества</h2>
-	<div class="container container--small">
-		<div class="benefits-row">
-			<div class="benefits-item">
-				<img src="<?= PATH . TEMPLATE ?>assets/img/main/bench.svg" alt="" class="benefits-item-icon">
-				<p class="benefits-item-desc">Свой автопарк</p>
+<?php if (!empty($advantages)) : ?>
+
+	<section class="benefits">
+		<h2 class="visually-hidden">Наши преимущества</h2>
+		<div class="container container--small">
+			<div class="benefits-row">
+
+				<?php foreach ($advantages as $item) : ?>
+
+					<div class="benefits-item">
+						<img src="<?= $this->img($item['img']) ?>" alt=" <?= $item['name'] ?>" class="benefits-item-icon">
+						<p class="benefits-item-desc" style="font-size: 22px;"><?= $item['short_content'] ?></p>
+					</div>
+
+				<?php endforeach; ?>
+
 			</div>
-			<div class="benefits-item">
-				<img src="<?= PATH . TEMPLATE ?>assets/img/main/building.svg" alt="" class="benefits-item-icon">
-				<p class="benefits-item-desc">Самые порядочные и актуальные грузчики</p>
-			</div>
-			<div class="benefits-item">
-				<img src="<?= PATH . TEMPLATE ?>assets/img/main/fountain.svg" alt="" class="benefits-item-icon">
-				<p class="benefits-item-desc">Самые низкие цены</p>
-			</div>
-			<!-- <div class="benefits-item">
-                    <img src="./img/main/bicycle.svg" alt="" class="benefits-item-icon">
-                    <p class="benefits-item-desc">6 км
-                        велодорожек</p> -->
 		</div>
-	</div>
-	</div>
-</section>
-<section class="apartments" id="apartments">
+	</section>
+
+<?php endif; ?>
+
+<section class="apartments" style="margin-top: 10px;">
 	<div class="container">
 		<div class="apartments-title">
 			<h2 class="title-2">Наш автопарк</h2>
 		</div>
 		<div class="apartments-cards">
-			<a href="" class="card">
+			<div href="" class="card">
 				<img src="<?= PATH . TEMPLATE ?>assets/img/main/газель.jpg" alt="card-image" class="card-img">
-				<!-- <h3 class="card-title">Газель: 1500 руб/ч, подача 40₽ километр</h3> -->
-			</a>
-			<a href="" class="card">
+			</div>
+			<div class="card">
 				<img src="<?= PATH . TEMPLATE ?>assets/img/main/зил.jpg" alt="card-image" class="card-img">
-				<!-- <h3 class="card-title">Апартаменты “Nice Loft”</h3> -->
-			</a>
-			<a href="" class="card">
+			</div>
+			<div href="" class="card">
 				<img src="<?= PATH . TEMPLATE ?>assets/img/main/камаз.jpg" alt="card-image" class="card-img">
-				<!-- <h3 class="card-title">Апартаменты “Loft Studio”</h3> -->
-			</a>
-			<!-- <a href="" class="card">
-                    <img src="./img/main/04.jpg" alt="card-image" class="card-img">
-                    <h3 class="card-title">Loft квартира “Престиж”</h3>
-                </a> -->
+			</div>
+
 		</div>
 	</div>
 </section>
 
-<section class="cta">
+<section class="cta" style="background: linear-gradient(90deg, #343e49 0%, rgba(36, 43, 51, 0) 100%, #343e49 90.1%), linear-gradient(0deg, rgba(36, 43, 51, 0.7), rgba(36, 43, 51, 0.9)), url(<?= $this->img($this->set['promo_img']) ?>) center center/cover no-repeat, #343e49; padding: 70px 0;">
 	<div class="container">
 		<div class="cta-title" id="price">
 			<h2 class="title-2">Стоимость услуг</h2>
 		</div>
 		<div class="cta-row">
 			<div class="cta-text" style="font-size: 20px;">
-				<p>
-					Грузчики: от 750 руб/ч<br>
-					Газель: 1500 руб. подача, 40 руб. километр<br>
-					Зил: от 9000 руб.<br>
-					КамАЗ: от 13000руб.</p>
+				<?= $this->set['description'] ?>
 			</div>
 			<div class="cta-text" id="about" style="font-size: 16px;">
 				<h2 class="title-2">О нас</h2><br>
-				<p>В распоряжении компании Груз Центр имеются грузовые автомобили «ГАЗель» вместимостью до 1,5 тонн ЗИЛ и КАМАЗ . Наши грузчики приедут на указанный вами адрес, в указанное время, перенесут и погрузят из вашей квартиры или офиса любую мебель и бытовую технику, после чего перевезут по адресу доставки. Быстро, надежно, качественно и главное недорого!
-					Так же занимаемся вывозом различного мусора и выгрузками фур,сотрудничаем с компаниями.</p>
+				<div><?= $this->set['about_us'] ?></div>
 			</div>
 
 			<div class="form cta-form">
 
-				<p class="form-privacy" style="font-size: 18px;">График работы каждый день с 8:00 до 21:00</p>
+				<div class="form-privacy" style="font-size: 18px; color: #D4C17F"><?= $this->set['working_time'] ?></div>
 
 			</div>
 		</div>
 	</div>
 </section>
 
-<section class="services" id="services" style="margin: 70px 0;">
-	<div class="container">
-		<div class="apartments-title">
-			<h2 class="title-2">Наши услуги</h2>
-		</div>
-		<div class="apartments-cards">
-			<a href="" class="card">
-				<img src="<?= PATH . TEMPLATE ?>assets/img/main/01.jpg" alt="card-image" class="card-img">
-				<h3 class="card-title">Апартаменты “Nice Loft”</h3>
-			</a>
-			<p>В распоряжении компании Груз Центр имеются грузовые автомобили «ГАЗель» вместимостью до 1,5 тонн ЗИЛ и КАМАЗ . Наши грузчики приедут на указанный вами адрес, в указанное время, перенесут и погрузят из вашей квартиры или офиса любую мебель и бытовую технику, после чего перевезут по адресу доставки. Быстро, надежно, качественно и главное недорого!
-				Так же занимаемся вывозом различного мусора и выгрузками фур,сотрудничаем с компаниями.</p>
-			<a href="" class="card">
-				<img src="<?= PATH . TEMPLATE ?>assets/img/main/02.jpg" alt="card-image" class="card-img">
-				<h3 class="card-title">Апартаменты “Nice Loft”</h3>
+<?php if (!empty($goods)) : ?>
 
-			</a>
-			<p>В распоряжении компании Груз Центр имеются грузовые автомобили «ГАЗель» вместимостью до 1,5 тонн ЗИЛ и КАМАЗ . Наши грузчики приедут на указанный вами адрес, в указанное время, перенесут и погрузят из вашей квартиры или офиса любую мебель и бытовую технику, после чего перевезут по адресу доставки. Быстро, надежно, качественно и главное недорого!
-				Так же занимаемся вывозом различного мусора и выгрузками фур,сотрудничаем с компаниями.</p>
-			<a href="" class="card">
-				<img src="<?= PATH . TEMPLATE ?>assets/img/main/03.jpg" alt="card-image" class="card-img">
-				<h3 class="card-title">Апартаменты “Loft Studio”</h3>
-			</a>
-			<p>В распоряжении компании Груз Центр имеются грузовые автомобили «ГАЗель» вместимостью до 1,5 тонн ЗИЛ и КАМАЗ . Наши грузчики приедут на указанный вами адрес, в указанное время, перенесут и погрузят из вашей квартиры или офиса любую мебель и бытовую технику, после чего перевезут по адресу доставки. Быстро, надежно, качественно и главное недорого!
-				Так же занимаемся вывозом различного мусора и выгрузками фур,сотрудничаем с компаниями.</p>
-			<a href="" class="card">
-				<img src="<?= PATH . TEMPLATE ?>assets/img/main/04.jpg" alt="card-image" class="card-img">
-				<h3 class="card-title">Loft квартира “Престиж”</h3>
-			</a>
-			<p>В распоряжении компании Груз Центр имеются грузовые автомобили «ГАЗель» вместимостью до 1,5 тонн ЗИЛ и КАМАЗ . Наши грузчики приедут на указанный вами адрес, в указанное время, перенесут и погрузят из вашей квартиры или офиса любую мебель и бытовую технику, после чего перевезут по адресу доставки. Быстро, надежно, качественно и главное недорого!
-				Так же занимаемся вывозом различного мусора и выгрузками фур,сотрудничаем с компаниями.</p>
+	<section class="services" id="services" style="margin: 70px 0;">
+		<div class="container">
+			<div class="apartments-title">
+				<h2 class="title-2">Наши услуги</h2>
+			</div>
+
+			<?php foreach ($goods as $item) {
+
+				$this->showGoods($item);
+			} ?>
+
+
+
+
 		</div>
-	</div>
-</section>
+	</section>
+
+<?php endif; ?>
